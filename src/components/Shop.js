@@ -415,7 +415,8 @@ const trader = {
 }
 
 
-const Shop = ({inventoryChosen}) => {
+
+const Shop = ({buyItem}) => {
 
     const [getState, setState] = useState("weapons")
 
@@ -429,10 +430,12 @@ const Shop = ({inventoryChosen}) => {
             <div>
                 <div className="container d-flex wrap">
                     {trader[getState].map((x, i) =>
-                        <div key={i} onClick={() => inventoryChosen(x)}>
+                        <div key={i} onClick={() => buyItem(x)}>
                             <div className="item">
                                 <img src={x.image} alt=""/>
                             </div>
+                            {x.maxDamage && <div>DMG: {x.maxDamage}</div>}
+                            {x.title && <div>DMG: {x.effect.health}</div>}
                             <div>{x.price}</div>
                         </div>
 
