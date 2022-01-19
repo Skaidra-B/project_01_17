@@ -48,12 +48,6 @@ function App() {
             }
          }
     }
-    function equipItem(item) {
-
-    }
-
-
-
 
     return (
         <div className="App ">
